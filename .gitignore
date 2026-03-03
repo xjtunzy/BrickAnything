@@ -1,0 +1,25 @@
+/*
+!/src/
+!.gitignore
+
+# ---- ignore artifacts inside src ----
+# checkpoints / weights
+src/**/checkpoints/
+src/**/*.ckpt
+src/**/*.pt
+src/**/*.pth
+src/**/*.safetensors
+src/**/*.onnx
+
+# numpy / cache
+src/**/*.npz
+src/**/*.npy
+src/**/__pycache__/
+src/**/*.pyc
+
+# build artifacts
+src/**/build/
+src/**/*.o
+src/**/*.so
+src/**/*.a
+src/**/*.out
