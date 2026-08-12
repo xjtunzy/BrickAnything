@@ -1,21 +1,68 @@
-# Getting Started
+# BrickAnything
+**BrickAnything** is a geometry-conditioned generative framework for creating physically buildable brick assemblies from 3D shapes. By combining structure-aware tree modeling, buildability-aware preference optimization, and efficient structural rollback, BrickAnything generates brick structures with improved geometric fidelity, validity, and physical stability.
 
-## 1. Set Up the Environment
+## Getting Started
+
+### Set Up the Environment
 Create the conda environment:
 ```bash
+git clone --recursive https://github.com/yourname/BrickAnything.git
+cd BrickAnything
 conda create -n BrickAnything python=3.10.20
 conda activate BrickAnything
 pip install -r requirements.txt
-pip install flashattention=2.7.3
-pip install bpy=4.0.0
+pip install flash-attn==2.7.3
+pip install bpy==4.0.0
 ```
 Running stability analysis requires a Gurobi license to use Gurobi. Academics may request a free license from the [Gurobi website](https://www.gurobi.com/product/download-center); after obtaining the license, place it in your home directory or another recommended location.
 
 Download the LDraw parts library: `cd ~ && wget https://library.ldraw.org/library/updates/complete.zip && unzip complete.zip`
-If you wish to put the LDraw parts library in a different directory, set the environment variable LDRAW_LIBRARY_PATH to the path of the ldraw directory: `export LDRAW_LIBRARY_PATH=path/to/ldraw`,which one I recommend.
+Alternatively, you can place the LDraw library in a custom directory and set: `export LDRAW_LIBRARY_PATH=/path/to/ldraw` Using the `LDRAW_LIBRARY_PATH` environment variable is recommended.
+
+Install the ImportLDraw submodule with `git submodule update --init`.
 
 Download Michelangelo's point encoder from [website](https://huggingface.co/Maikou/Michelangelo/tree/main/checkpoints/aligned_shape_latents) and put it into `src/brickanything_train/miche/checkpoints/aligned_shape_latents/shapevae-256.ckpt`.
 
-Download the brickanything's model weight from [website](https://huggingface.co/niels-peter/BrickAnything) and put it in your home, then modify the ckpt_path in`model_config/opt_tree_mode.yaml`
+Download the brickanything's model weight from [website](https://huggingface.co/niels-peter/BrickAnything/blob/main/tree_mode.pth) and put it in your home, then modify the `ckpt_path` in`model_config/opt_tree_mode.yaml`
 
-# Acknowledgement
+### Run inference
+```bash
+# mesh condition
+# Single mesh or directory containing multiple meshes
+python src/main.py \
+  --config model_config/opt_tree_mode.yaml \
+  --input_path path_to_target_obj \
+  --out_dir inference_out \
+  --input_type mesh \
+  --mc \
+  --mc_level 7
+```
+```bash
+# pointcloud condition
+# Single pointcloud or dir of several pointcloud
+python src/main.py \
+  --config model_config/opt_tree_mode.yaml \
+  --input_dir pc_examples \ 
+  --out_dir inference_out \
+  --input_type pc_normal
+```
+## Citation
+
+If you find our work useful, please consider citing:
+
+```bibtex
+@misc{ni2026brickanything,
+  title         = {BrickAnything: Geometry-Conditioned Buildable Brick Generation with Structure-Aware Tokenization},
+  author        = {Zhengyang Ni and Feng Yan and Yu Guo and Fei Wang},
+  year          = {2026},
+  eprint        = {2605.26182},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.AI}
+}
+```
+## Acknowledgements
+Our code is based on these wonderful repos:
+- [MeshAnything](http://github.com/buaacyw/MeshAnything)
+- [MeshAnythingV2](https://github.com/buaacyw/MeshAnythingV2)
+- [BrickGPT](https://github.com/AvaLovelace1/BrickGPT)
+- [StableLego](https://github.com/intelligent-control-lab/StableLego)
