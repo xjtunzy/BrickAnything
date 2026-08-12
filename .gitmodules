@@ -1,0 +1,4 @@
+[submodule "ImportLDraw"]
+	path = ImportLDraw
+	url = https://github.com/TobyLobster/ImportLDraw.git
+	branch = master

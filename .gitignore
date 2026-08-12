@@ -6,6 +6,7 @@
 
 # ---- whitelist ----
 !.gitignore
+!.gitmodules
 !/README.md
 !/LICENSE
 !/requirements.txt
@@ -13,6 +14,8 @@
 !/scripts/
 !/model_config/
 !/meshexample/
+!/ImportLDraw
+!/ImportLDraw/**
 
 # scripts: inference only
 /scripts/*
