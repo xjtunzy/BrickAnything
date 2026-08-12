@@ -17,5 +17,5 @@ model:
   top_p: 0.95
   temperature: 0.7
 
-# Download / place the tree_mode checkpoint, then set this path.
+# Place the tree_mode checkpoint locally, then set this path.
 ckpt_path: 'checkpoints/tree_mode.pth'

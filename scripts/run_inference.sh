@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # Example tree_mode inference entrypoint.
-# Requires: checkpoint path in model_config/opt_tree_mode.yaml (ckpt_path).
+# Set ckpt_path in model_config/opt_tree_mode.yaml before running.
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "${ROOT}"

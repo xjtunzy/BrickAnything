@@ -1,5 +1,5 @@
 # ============================================================
-# Open-source whitelist (inference only for now).
+# Open-source whitelist: inference only.
 # Ignore everything, then re-include publishable paths.
 # ============================================================
 /*
@@ -22,8 +22,7 @@
 /model_config/*
 !/model_config/opt_tree_mode.yaml
 
-# ---- src: keep inference stack only ----
-# training (will be published from another machine later)
+# ---- src: exclude training ----
 /src/train.py
 /src/sft.py
 /src/train_dpo.py
@@ -64,7 +63,7 @@
 /src/metrics/render_pointcloud.py
 /src/metrics/render_cubes.py
 
-# ---- ignore artifacts inside whitelisted dirs ----
+# ---- ignore artifacts ----
 **/__pycache__/
 **/*.py[cod]
 **/*.egg-info/

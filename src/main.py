@@ -18,7 +18,7 @@ from BrickAnything.models.brickanything_tree_mode import BrickAnything
 from metrics.evaluate import evaluate_func
 from metrics.voxel_evaluate import evaluate_func as evaluate_voxel
 
-# Optional Blender/ImportLDraw rendering (not required for generation).
+# Optional Blender rendering (not required for generation / LDR export).
 try:
     from brickanything_train.render_bricks import render_bricks as _render_bricks
 except Exception:
@@ -155,7 +155,7 @@ def get_args():
         "--do_render",
         default=False,
         action="store_true",
-        help="Render LDR to PNG via Blender/ImportLDraw if available.",
+        help="Render LDR to PNG if Blender/ImportLDraw tooling is available locally.",
     )
 
     args = parser.parse_args()
@@ -295,7 +295,7 @@ if __name__ == "__main__":
                 if args.do_render:
                     if _render_bricks is None:
                         logger.warning(
-                            "Skipping render: brickanything_train.render_bricks / ImportLDraw unavailable."
+                            "Skipping render: local render tooling unavailable."
                         )
                     else:
                         _render_bricks(ldr_save_path, photo_save_path)
