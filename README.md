@@ -16,4 +16,6 @@ If you wish to put the LDraw parts library in a different directory, set the env
 
 Download Michelangelo's point encoder from [website](https://huggingface.co/Maikou/Michelangelo/tree/main/checkpoints/aligned_shape_latents) and put it into `src/brickanything_train/miche/checkpoints/aligned_shape_latents/shapevae-256.ckpt`.
 
+Download the brickanything's model weight from [website](https://huggingface.co/niels-peter/BrickAnything) and put it in your home, then modify the ckpt_path in`model_config/opt_tree_mode.yaml`
+
 # Acknowledgement
