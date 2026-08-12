@@ -30,7 +30,7 @@
 /src/sft.py
 /src/train_dpo.py
 /src/test_dpo.py
-/src/brickanything_train/
+
 
 # data prep / mesh2brick / LDraw tooling
 /src/data_process/
