@@ -1,0 +1,21 @@
+model:
+  n_discrete_size: 20
+  cond_length: 257
+  cond_dim: 768
+  pad_id: -1
+  llm_name: "facebook/opt-350m"
+
+  max_seq_ratio: 1
+  brick_per_token: 5
+  n_max_bricks: 1000
+  max_length: 5000
+  max_generation_num: 100
+  max_rollback_num: 100
+  mask: False
+  sampling: True
+  top_k: 10
+  top_p: 0.95
+  temperature: 0.7
+
+# Download / place the tree_mode checkpoint, then set this path.
+ckpt_path: 'checkpoints/tree_mode.pth'

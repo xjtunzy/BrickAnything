@@ -1,25 +1,101 @@
+# ============================================================
+# Open-source whitelist (inference only for now).
+# Ignore everything, then re-include publishable paths.
+# ============================================================
 /*
-!/src/
+
+# ---- whitelist ----
 !.gitignore
+!/README.md
+!/LICENSE
+!/requirements.txt
+!/src/
+!/scripts/
+!/model_config/
+!/meshexample/
 
-# ---- ignore artifacts inside src ----
-# checkpoints / weights
-src/**/checkpoints/
-src/**/*.ckpt
-src/**/*.pt
-src/**/*.pth
-src/**/*.safetensors
-src/**/*.onnx
+# scripts: inference only
+/scripts/*
+!/scripts/run_inference.sh
 
-# numpy / cache
-src/**/*.npz
-src/**/*.npy
-src/**/__pycache__/
-src/**/*.pyc
+# model_config: tree_mode only
+/model_config/*
+!/model_config/opt_tree_mode.yaml
 
-# build artifacts
-src/**/build/
-src/**/*.o
-src/**/*.so
-src/**/*.a
-src/**/*.out
+# ---- src: keep inference stack only ----
+# training (will be published from another machine later)
+/src/train.py
+/src/sft.py
+/src/train_dpo.py
+/src/test_dpo.py
+/src/brickanything_train/
+
+# data prep / mesh2brick / LDraw tooling
+/src/data_process/
+/src/ImportLDraw/
+/src/mesh2brick/
+/src/mesh2brick_org/
+/src/mesh2brick_v2/
+/src/mesh2brick.py
+/src/render_bricks.py
+
+# analysis / DPO / auxiliary entrypoints
+/src/check_stable.py
+/src/eval_entropy.py
+/src/eval_entropy_tree.py
+/src/verify_entropy.py
+/src/hunyuan_img2mesh.py
+/src/hunyuan_text2mesh.py
+/src/infer_dpo.py
+/src/infer_vail.py
+/src/prompts_text2brick_20.json
+/src/eval.py
+/src/discrete_diffusion.py
+
+# non-tree_mode model variants
+/src/BrickAnything/models/brickanything.py
+/src/BrickAnything/models/brickanything_v3.py
+/src/BrickAnything/models/mask_policy.py
+/src/BrickAnything/models/shape_opt.py
+
+# metrics: keep evaluate / voxel_evaluate / voxelization_v1
+/src/metrics/PyTorchEMD/
+/src/metrics/visual/
+/src/metrics/render_pointcloud.py
+/src/metrics/render_cubes.py
+
+# ---- ignore artifacts inside whitelisted dirs ----
+**/__pycache__/
+**/*.py[cod]
+**/*.egg-info/
+**/.pytest_cache/
+**/.mypy_cache/
+
+**/checkpoints/
+**/*.ckpt
+**/*.pt
+**/*.pth
+**/*.safetensors
+**/*.onnx
+
+**/*.npz
+**/*.npy
+
+**/build/
+**/*.o
+**/*.so
+**/*.a
+**/*.out
+
+.vscode/
+.idea/
+*.swp
+.env
+.venv/
+venv/
+
+**/*.log
+**/wandb/
+**/runs/
+**/output/
+**/outputs/

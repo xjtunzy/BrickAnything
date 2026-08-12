@@ -37,17 +37,24 @@ def export_to_watertight(normalized_mesh, octree_depth: int = 7):
 
     return mesh
 
-def process_mesh_to_pc(mesh_list, marching_cubes = False, sample_num = 8192, mc_level= 7):
+def process_mesh_to_pc(mesh_list, marching_cubes = False, sample_num = 8192, mc_level= 7, seed=None):
     # mesh_list : list of trimesh
     pc_normal_list = []
     return_mesh_list = []
+    seed_rng = np.random.RandomState(seed) if seed is not None else None
     for mesh in mesh_list:
         if marching_cubes:
             cur_time = time.time()
             mesh = export_to_watertight(mesh, octree_depth=mc_level)
             print("MC over! ", "mc_level: ", mc_level, "process_time:" , time.time() - cur_time)
         return_mesh_list.append(mesh)
+        # trimesh.sample uses numpy RNG internally; set per-mesh seed for reproducible sampling.
+        if seed_rng is not None:
+            prev_state = np.random.get_state()
+            np.random.seed(int(seed_rng.randint(0, 2**31 - 1)))
         points, face_idx = mesh.sample(sample_num, return_index=True)
+        if seed_rng is not None:
+            np.random.set_state(prev_state)
         normals = mesh.face_normals[face_idx]
 
         pc_normal = np.concatenate([points, normals], axis=-1, dtype=np.float16)
