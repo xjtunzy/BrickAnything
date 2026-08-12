@@ -6,7 +6,7 @@
 ### Set Up the Environment
 Create the conda environment:
 ```bash
-git clone --recursive https://github.com/yourname/BrickAnything.git
+git clone --recursive https://github.com/xjtunzy/BrickAnything.git
 cd BrickAnything
 conda create -n BrickAnything python=3.10.20
 conda activate BrickAnything
@@ -20,6 +20,8 @@ Download the LDraw parts library: `cd ~ && wget https://library.ldraw.org/librar
 Alternatively, you can place the LDraw library in a custom directory and set: `export LDRAW_LIBRARY_PATH=/path/to/ldraw` Using the `LDRAW_LIBRARY_PATH` environment variable is recommended.
 
 Install the ImportLDraw submodule with `git submodule update --init`.
+
+Download this [background exr file](https://drive.google.com/file/d/1Yux0sEqWVpXGMT9Z5J094ISfvxhH-_5K/view) and place it in the `ImportLDraw/loadldraw` subdirectory.
 
 Download Michelangelo's point encoder from [website](https://huggingface.co/Maikou/Michelangelo/tree/main/checkpoints/aligned_shape_latents) and put it into `src/brickanything_train/miche/checkpoints/aligned_shape_latents/shapevae-256.ckpt`.
 
