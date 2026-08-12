@@ -290,8 +290,8 @@ if __name__ == "__main__":
                     logger.info(f'chamfer loss: {chamfer_loss.item():.6f}')
                 logger.info(f'voxel iou: {voxel_iou}')
                 logger.info(f'voxel cd: {voxel_cd}')
-                save_voxel_png(voxels, voxels_save_path, title=f'{batch_data_label["uid"][batch_id]} voxel')
-                save_voxel_png(brick_occ, brick_occ_save_path, title=f'{batch_data_label["uid"][batch_id]} brick_occ')
+                #save_voxel_png(voxels, voxels_save_path, title=f'{batch_data_label["uid"][batch_id]} voxel')
+                #save_voxel_png(brick_occ, brick_occ_save_path, title=f'{batch_data_label["uid"][batch_id]} brick_occ')
                 if args.do_render:
                     if _render_bricks is None:
                         logger.warning(
