@@ -14,6 +14,6 @@ Running stability analysis requires a Gurobi license to use Gurobi. Academics ma
 Download the LDraw parts library: `cd ~ && wget https://library.ldraw.org/library/updates/complete.zip && unzip complete.zip`
 If you wish to put the LDraw parts library in a different directory, set the environment variable LDRAW_LIBRARY_PATH to the path of the ldraw directory: `export LDRAW_LIBRARY_PATH=path/to/ldraw`,which one I recommend.
 
-Download Michelangelo's point encoder from [website](https://huggingface.co/Maikou/Michelangelo/tree/main/checkpoints/aligned_shape_latents) and put it into `brickanything_train/miche/checkpoints/aligned_shape_latents/shapevae-256.ckpt`.
+Download Michelangelo's point encoder from [website](https://huggingface.co/Maikou/Michelangelo/tree/main/checkpoints/aligned_shape_latents) and put it into `src/brickanything_train/miche/checkpoints/aligned_shape_latents/shapevae-256.ckpt`.
 
 # Acknowledgement
