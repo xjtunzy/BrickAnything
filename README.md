@@ -37,7 +37,8 @@ python src/main.py \
   --out_dir inference_out \
   --input_type mesh \
   --mc \
-  --mc_level 7
+  --mc_level 7 \
+  --do_render
 ```
 ```bash
 # pointcloud condition
