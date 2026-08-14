@@ -30,7 +30,7 @@ Download the BrickAnything's model weight from [website](https://huggingface.co/
 ### Run inference
 ```bash
 # mesh condition
-# Single mesh or directory containing multiple meshes
+# Single mesh 
 python src/main.py \
   --config model_config/opt_tree_mode.yaml \
   --input_path path_to_target_obj \
@@ -39,10 +39,26 @@ python src/main.py \
   --mc \
   --mc_level 7 \
   --do_render
+# Directory containing multiple meshes
+python src/main.py \
+  --config model_config/opt_tree_mode.yaml \
+  --input_dir path_to_target_obj \
+  --out_dir inference_out \
+  --input_type mesh \
+  --mc \
+  --mc_level 7 \
+  --do_render
 ```
 ```bash
 # pointcloud condition
-# Single pointcloud or dir of several pointcloud
+# Single pointcloud 
+python src/main.py \
+  --config model_config/opt_tree_mode.yaml \
+  --input_path pc_example \ 
+  --out_dir inference_out \
+  --input_type pc_normal \
+  --do_render
+# Dir of several pointcloud
 python src/main.py \
   --config model_config/opt_tree_mode.yaml \
   --input_dir pc_examples \ 
