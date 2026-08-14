@@ -141,7 +141,7 @@ def get_args():
     )
 
     parser.add_argument("--batchsize_per_gpu", default=1, type=int)
-    parser.add_argument("--seed", default=42, type=int)
+    parser.add_argument("--seed", default=33, type=int)
     parser.add_argument("--trseed", default=26, type=int)
     parser.add_argument("--mc", default=False, action="store_true")
     parser.add_argument("--mc_level", default=7, type=int)
