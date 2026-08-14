@@ -56,7 +56,7 @@ def brick2ldr(bricks, ldr_path):
         if len(b) == 6:
             b_color = b[5]
         else:
-            b_color = 115
+            b_color = 14
         brick = Brick(h=b[0], w=b[1], x=b[2], y=b[3], z=b[4])
         line = brick.to_ldr(color=b_color)
         lines_out.append(line)
