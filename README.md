@@ -17,9 +17,17 @@ cd BrickAnything
 conda create -n BrickAnything python=3.10.20
 conda activate BrickAnything
 pip install -r requirements.txt
+```
+```
 pip install flash-attn==2.7.3
 pip install bpy==4.0.0
 ```
+> **Note:** `flash-attn==2.7.3` and `bpy==4.0.0` may require pre-built wheels depending on your Python, PyTorch, CUDA, and platform versions.  
+> - FlashAttention wheels: https://github.com/Dao-AILab/flash-attention/releases/tag/v2.7.3  
+> - Blender `bpy` wheels: https://download.blender.org/pypi/bpy/
+>
+> Please select the wheel compatible with your environment rather than blindly using the commands below.
+
 Running stability analysis requires a Gurobi license to use Gurobi. Academics may request a free license from the [Gurobi website](https://www.gurobi.com/product/download-center); after obtaining the license, place it in your home directory or another recommended location.
 
 Download the LDraw parts library: `cd ~ && wget https://library.ldraw.org/library/updates/complete.zip && unzip complete.zip`
