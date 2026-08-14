@@ -219,7 +219,7 @@ if __name__ == "__main__":
             mesh_exts = ('.ply', '.obj', '.stl', '.glb', '.gltf')
             input_list = [os.path.join(args.input_dir, x) for x in input_list if x.lower().endswith(mesh_exts)]
         set_seed(args.seed)
-        dataset = Dataset(args.input_type, input_list, args.mc, args.mc_level)
+        dataset = Dataset(args.input_type, input_list, args.mc, args.mc_level, args.seed)
     elif args.input_path is not None:
         set_seed(args.seed)
         dataset = Dataset(args.input_type, [args.input_path], args.mc, args.mc_level, args.seed)
