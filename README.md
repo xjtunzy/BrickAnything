@@ -22,9 +22,9 @@ pip install -r requirements.txt
 pip install flash-attn==2.7.3
 pip install bpy==4.0.0
 ```
-> **Note:** `flash-attn==2.7.3` and `bpy==4.0.0` may require pre-built wheels depending on your Python, PyTorch, CUDA, and platform versions.  
-> - FlashAttention wheels: https://github.com/Dao-AILab/flash-attention/releases/tag/v2.7.3  
-> - Blender `bpy` wheels: https://download.blender.org/pypi/bpy/
+> **Note:** `flash-attn==2.7.3` and `bpy==4.0.0` may require pre-built wheels depending on your Python, CUDA, and platform versions.  
+> - FlashAttention wheels: [Website](https://github.com/Dao-AILab/flash-attention/releases/tag/v2.7.3)  
+> - Blender `bpy` wheels: [Website](https://download.blender.org/pypi/bpy/)
 >
 > Please select the wheel compatible with your environment rather than blindly using the commands below.
 
