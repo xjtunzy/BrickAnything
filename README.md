@@ -10,7 +10,9 @@ Official code of **BrickAnything：Geometry-Conditioned Buildable Brick Generati
 ## Getting Started
 
 ### Set Up the Environment
-The code has been tested on Ubuntu 20.04.6 LTS with CUDA Toolkit 11.7 and an NVIDIA GeForce RTX 4090 (24 GB).Create the conda environment:
+The code has been tested on Ubuntu 20.04.6 LTS with CUDA Toolkit 11.7 and an NVIDIA GeForce RTX 4090 (24 GB). 
+
+Let us begin by creating the conda environment:
 ```bash
 git clone --recursive https://github.com/xjtunzy/BrickAnything.git
 cd BrickAnything
