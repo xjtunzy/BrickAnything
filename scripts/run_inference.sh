@@ -9,7 +9,7 @@ cd "${ROOT}"
 
 PYTHON="${PYTHON:-python}"
 CONFIG="${CONFIG:-model_config/opt_tree_mode.yaml}"
-INPUT_DIR="${INPUT_DIR:-meshexample/model}"
+INPUT_DIR="${INPUT_DIR:-meshexample}"
 OUT_DIR="${OUT_DIR:-inference_out}"
 CUDA_VISIBLE_DEVICES="${CUDA_VISIBLE_DEVICES:-0}"
 
