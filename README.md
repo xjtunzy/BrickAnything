@@ -10,7 +10,7 @@ Official code of **BrickAnything：Geometry-Conditioned Buildable Brick Generati
 ## Getting Started
 
 ### Set Up the Environment
-Create the conda environment:
+The code has been tested on Ubuntu 20.04.6 LTS with CUDA Toolkit 11.7 and an NVIDIA GeForce RTX 4090 (24 GB).Create the conda environment:
 ```bash
 git clone --recursive https://github.com/xjtunzy/BrickAnything.git
 cd BrickAnything
@@ -23,8 +23,8 @@ pip install flash-attn==2.7.3
 pip install bpy==4.0.0
 ```
 > **Note:** `flash-attn==2.7.3` and `bpy==4.0.0` may require pre-built wheels depending on your Python, CUDA, and platform versions.  
-> - FlashAttention wheels: [Website](https://github.com/Dao-AILab/flash-attention/releases/tag/v2.7.3)  
-> - Blender `bpy` wheels: [Website](https://download.blender.org/pypi/bpy/)
+> - FlashAttention wheels: [website](https://github.com/Dao-AILab/flash-attention/releases/tag/v2.7.3)  
+> - Blender `bpy` wheels: [website](https://download.blender.org/pypi/bpy/)
 >
 > Please select the wheel compatible with your environment rather than blindly using the commands below.
 
