@@ -25,7 +25,7 @@ Download this [background exr file](https://drive.google.com/file/d/1Yux0sEqWVpX
 
 Download Michelangelo's point encoder from [website](https://huggingface.co/Maikou/Michelangelo/tree/main/checkpoints/aligned_shape_latents) and put it into `src/brickanything_train/miche/checkpoints/aligned_shape_latents/shapevae-256.ckpt`.
 
-Download the brickanything's model weight from [website](https://huggingface.co/niels-peter/BrickAnything/blob/main/tree_mode.pth) and put it in your home, then modify the `ckpt_path` in`model_config/opt_tree_mode.yaml`
+Download the BrickAnything's model weight from [website](https://huggingface.co/niels-peter/BrickAnything/blob/main) and put it in your home, then modify the `ckpt_path` in`model_config/opt_tree_mode.yaml`
 
 ### Run inference
 ```bash
@@ -47,7 +47,8 @@ python src/main.py \
   --config model_config/opt_tree_mode.yaml \
   --input_dir pc_examples \ 
   --out_dir inference_out \
-  --input_type pc_normal
+  --input_type pc_normal \
+  --do_render
 ```
 ## Citation
 
