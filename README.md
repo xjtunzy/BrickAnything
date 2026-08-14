@@ -3,6 +3,10 @@ Official code of **BrickAnything：Geometry-Conditioned Buildable Brick Generati
 
 **BrickAnything** is a geometry-conditioned generative framework for creating physically buildable brick assemblies from 3D shapes. By combining structure-aware tree modeling, buildability-aware preference optimization, and efficient structural rollback, BrickAnything generates brick structures with improved geometric fidelity, validity, and physical stability.
 
+<p align="center">
+  <img src="assets/results.png" width="1000">
+</p>
+
 ## Getting Started
 
 ### Set Up the Environment
